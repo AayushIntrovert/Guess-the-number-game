@@ -1,0 +1,61 @@
+import random
+
+choice = ["rock", "paper", "scissors"]
+user_points = 0
+bot_points = 0
+chance = 10
+no_of_chances = 0
+while no_of_chances < chance:
+    user_choice = input("type: r, p, s\n r for rock, p for paper and s for scissors\n")
+    choose = random.choice(choice)
+
+    if user_choice == "r" and choose == "scissors":
+        print("The computer chose scissors")
+        print("You won")
+        user_points = user_points+1
+        print(user_points, ":", bot_points)
+    elif user_choice == "r" and choose == "paper":
+        print("The commputer chose paper")
+        print("You lost ")
+        bot_points = bot_points+1
+        print(user_points, ":", bot_points)
+    elif user_choice == "r" and choose == "rock":
+        print("The computer also chose snake")
+        print("It's a Draw")
+        print(user_points, ":", bot_points)
+    elif user_choice == "p" and choose == "scissors":
+        print("The computer chose scissors")
+        print("You lost")
+        bot_points = bot_points + 1
+        print(user_points, ":", bot_points)
+    elif user_choice == "p" and choose == "rock":
+        print("The computer chose rock")
+        print("You won")
+        user_points = user_points + 1
+        print(user_points, ":", bot_points)
+    elif user_choice == "p" and choose == "paper":
+        print("The computer also chose paper")
+        print("It's a Draw")
+        print(user_points, ":", bot_points)
+    elif user_choice == "s" and choose == "paper":
+        print("The computer chose paper")
+        print("You won")
+        user_points = user_points + 1
+        print(user_points, ":", bot_points)
+    elif user_choice == "s" and choose == "rock":
+        print("The computer chose rock")
+        print("You lost")
+        bot_points = bot_points + 1
+        print(user_points, ":", bot_points)
+    elif user_choice == "s" and choose == "scissors":
+        print("The computer also chose scissors")
+        print("It's a Draw")
+        print(user_points, ":", bot_points)
+    no_of_chances = no_of_chances+1
+print("Game Over")
+if user_points == bot_points:
+    print("Draw")
+elif user_points > bot_points:
+    print("You won")
+elif user_points < bot_points:
+    print("You Lost")
